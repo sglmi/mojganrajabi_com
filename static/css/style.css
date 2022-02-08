@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;1,700&display=swap');
+
+
+* {
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --light: #f1faee;
+  --light-blue: #a8dadc;
+  --blue: #457b9d;
+  --dark-blue: #1d3557;
+  --red: #c1121f;
+  --green: #899d78;
+  --pink: #ffafcc;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: var(--light); 
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+
+}
+
+a {
+  text-decoration: none;
+}
+
+
+.navbar {
+  background-color: #2d6a4f;
+  display: flex;
+  justify-content: space-between;
+}
+
+.navbar a {
+  color: var(--light);
+  display: inline-block;
+  padding: .75em 1.5em;
+  font-weight: bold;
+}
+
+.navbar a:hover {
+  background-color: var(--blue);
+  font-weight: bold;
+  transition: .5s;
+}
+
+.hero {
+  text-align: center;
+  padding: 5em 0;
+  background-color: var(--light-blue);
+}
+
+.hero > h1 {
+  font-size: 3rem;
+}
+
+.course_list > ul {
+  margin: 0 5%;
+  display: flex;
+  justify-content: space-between;
+}

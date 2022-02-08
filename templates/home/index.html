@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title %}Mojgan Rajabi | Home{% endblock title %}
+{% block content %}
+<div class="hero">
+<h1>Learn modern computation online</h1>
+<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis, incidunt!</p>
+</div>
+<div class="course_list">
+  <ul>
+    {% for course in courses %}
+      <li>
+        <a href="{% url 'course-detail' course.pk %}">{{ course.title }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+</div>
+{% endblock content %}
