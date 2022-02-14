@@ -26,9 +26,16 @@ class Chapter(models.Model):
 
 
 class Lesson(models.Model):
-    video = models.FileField(upload_to="videos")
+    PAYMENT_STATUS = (
+        ("free", "Free"),
+        ("paid", "Paid"),
+    )
+    video = models.FileField(upload_to=f"videos")
     title = models.CharField(max_length=128)
     chapter = models.ForeignKey(Chapter, on_delete=models.CASCADE)
+    payment_status = models.CharField(
+        max_length=4, choices=PAYMENT_STATUS, default="paid"
+    )
 
     def __str__(self):
         return self.title
