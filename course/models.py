@@ -8,7 +8,9 @@ class Course(models.Model):
     title = models.CharField(max_length=127)
     subtitle = models.CharField(max_length=255)
     detail = models.TextField()
-    date_published = models.DateField(default=timezone.now)
+    date_published = models.DateField(null=True, blank=True)
+    date_created = models.DateField(auto_now_add=True)
+    date_modified = models.DateField(auto_now=True)
 
     def get_absolute_url(self):
         return reverse("course-detail", kwargs={"pk": self.pk})
