@@ -33,7 +33,11 @@ a {
   text-decoration: none;
 }
 
-
+hr {
+  height: 1px;
+  background-color: black;
+  margin: 5px;
+}
 .navbar {
   background-color: #2d6a4f;
   display: flex;

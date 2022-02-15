@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<video width="320" height="240" controls>
+  <source src="{{ lesson.video.url }}" type="video/mp4">
+</video>
+{% for chapter in lesson.chapter.course.chapter_set.all %}
+<li class="chapter">
+  <ul class="lessons">
+  {% for lesson in chapter.lesson_set.all %}
+    <li class="lesson"><a href="{% url 'lesson-detail' lesson.pk %}">{{ lesson.title }}</a></li>
+  {% endfor %}
+  </ul>
+</li>
+{% endfor %} 
+</ul>
+{% endblock content %}

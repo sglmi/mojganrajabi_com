@@ -1,10 +1,12 @@
+from email.policy import default
 from django.db import models
 from django.urls import reverse
 from django.utils import timezone
 
 
 class Course(models.Model):
-    image = models.ImageField(upload_to="images/course", default="course_defualt.jpg")
+    image = models.ImageField(upload_to="images/courses", default="course.jpg")
+    promotion = models.FileField(upload_to="videos/courses/")
     title = models.CharField(max_length=127)
     subtitle = models.CharField(max_length=255)
     detail = models.TextField()
@@ -32,12 +34,15 @@ class Lesson(models.Model):
         ("free", "Free"),
         ("paid", "Paid"),
     )
-    video = models.FileField(upload_to=f"videos")
+    video = models.FileField(upload_to=f"videos/lessons/")
     title = models.CharField(max_length=128)
-    chapter = models.ForeignKey(Chapter, on_delete=models.CASCADE)
     payment_status = models.CharField(
         max_length=4, choices=PAYMENT_STATUS, default="paid"
     )
+    chapter = models.ForeignKey(Chapter, on_delete=models.CASCADE)
+
+    def get_absolute_url(self):
+        return reverse("lesson-detail", kwargs={"pk": self.pk})
 
     def __str__(self):
         return self.title
