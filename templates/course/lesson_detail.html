@@ -1,17 +1,26 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<video width="320" height="240" controls>
-  <source src="{{ lesson.video.url }}" type="video/mp4">
-</video>
-{% for chapter in lesson.chapter.course.chapter_set.all %}
-<li class="chapter">
-  <ul class="lessons">
-  {% for lesson in chapter.lesson_set.all %}
-    <li class="lesson"><a href="{% url 'lesson-detail' lesson.pk %}">{{ lesson.title }}</a></li>
-  {% endfor %}
-  </ul>
-</li>
-{% endfor %} 
-</ul>
+<div class="lesson-flex">
+  <div class="player">
+    <video width="320" height="240" controls>
+      <source src="{{ lesson.video.url }}" type="video/mp4">
+    </video>
+  </div>
+  <ul class="chapters">
+    {% for chapter in lesson.chapter.course.chapter_set.all %}
+    <li class="chapter">
+      <h3>{{ chapter.title }}</h3>
+      <ul class="lessons">
+      {% for lesson in chapter.lesson_set.all %}
+      <li class="lesson">
+        <a href="{% url 'lesson-detail' lesson.pk %}">{{ lesson.title }}</a>
+        <span>{{ lesson.payment_status}}</span>
+      </li> <!-- end of a lesson-->
+      {% endfor %}
+      </ul> <!-- end of lessons-->
+    </li> <!-- end of a chapter-->
+    {% endfor %} 
+  </ul> <!-- end of chapters-->
+</div>
 {% endblock content %}
