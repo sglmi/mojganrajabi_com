@@ -1,29 +1,16 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block title %}Mojgan Rajabi | Home{% endblock title %}
 {% block content %}
 
 <!-- Heros, the website introduction area. -->
-<div class="hero">
-  <h1>Learn modern computation online</h1>
-  <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis, incidunt!</p>
-</div>
+<section class="hero">
+  <img src="{% static 'images/learn4.svg' %}" alt="">
+  <div class="hero-content">
+    <h1>Learn modern computation online</h1>
+    <a class="btn-primary" href="{% url 'course-list' %}">Courses</a>
+  </div>
 
-<!-- Cards / Courses -->
-<ul class="cards">
-  {% for course in courses %}
-    <li class="card">
-      <img src="{{ course.image.url }}" alt="{{ course.title }}">
-      <div class="body">
-        <h1><a href="{% url 'course-detail' course.pk %}">{{ course.title|title }}</a></h1>
-        <h2>{{ course.subtitle }}</h2>
-        <div class="footer">
-          <hr>
-          <span>Lessons: </span>
-          <span>Length: </span>
-        </div>
-      </div>
-    </li>
-  {% endfor %}
-</ul>
+</section>
 
 {% endblock content %}
