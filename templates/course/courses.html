@@ -1,5 +1,29 @@
-<h1>course list</h1>
+{% extends 'base.html' %}
+{% block title %}All courses{% endblock title %}
+{% block content %}
+<div class="cards-container">
+<ul class="cards">
+  {% for course in courses %}
+  <li class="card">
+    <video controls>
+      <source src="{{ course.promotion.url }}" type="video/mp4">
+    </video>
+    <div class="card-body">
+      <div class="card-content">
+        <h1>{{ course.title }}</h1>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. At, laboriosam!</p>
+        <a class="btn-primary" href="{% url 'course-detail' course.pk %}">Unlock course</a>
+      </div>
+      <div class="card-footer">
+        <p>C: 1:12</p>
+        <p>******</p>
+        <p>22$</p>
+      </div>
+    </div>
 
-{% for course in courses %}
-<li>{{ course.title }}</li>
-{% endfor %}
+   
+  </li>
+  {% endfor %}
+</ul>
+</div>
+{% endblock content %}
