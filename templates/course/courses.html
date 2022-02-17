@@ -12,16 +12,20 @@
       <div class="card-content">
         <h1>{{ course.title }}</h1>
         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. At, laboriosam!</p>
-        <a class="btn-primary" href="{% url 'course-detail' course.pk %}">Unlock course</a>
+        {% if course.payment_status == 'paid'  %}
+        <a class="btn-call" href="{% url 'course-detail' course.pk %}"><i class="fa-solid fa-lock"></i>Unlock course</a>
+        {% endif %}
+
+        {% if course.payment_status == 'free'  %}
+        <a class="btn-primary" href="{% url 'course-detail' course.pk %}"><i class="fa-solid fa-lock-open"></i></i>Go to course</a>
+        {% endif %}
       </div>
       <div class="card-footer">
-        <p>C: 1:12</p>
-        <p>******</p>
-        <p>22$</p>
+        <p><i class="fa-solid fa-video"></i>{{ course.number_of_lessons }}</p>
+        <p><i class="fa-solid fa-calendar-days"></i>{{ course.date_published }}<p>
+        <p><i class="fa-solid fa-dollar-sign"></i>{{ course.price }}</p>
       </div>
     </div>
-
-   
   </li>
   {% endfor %}
 </ul>

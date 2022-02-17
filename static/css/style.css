@@ -19,7 +19,8 @@
 }
 
 body {
-  background-color: var(--white); 
+  background-color: var(--white);
+  color: var(--black);
 }
 
 h1, p, span {
@@ -43,7 +44,11 @@ a:hover {
 
 hr {
   height: 1px;
-  background-color: black;
+  background-color: var(--black);
+}
+
+i {
+  margin-right: 5px;
 }
 
 header {
@@ -62,22 +67,26 @@ header {
 
 .btn-call {
   background-color: var(--accent);
-  padding: 1em 3em;
-  border-radius: 5px;
-  color: var(--white);
-}
-
-.btn-primary {
-  background-color: var(--accent);
   padding: .5em 1.5em;
   border-radius: 5px;
   color: var(--white);
-  margin: 1em 0;
   display: inline-block;
 }
 
-.btn-call:hover, .btn-primary:hover  {
-  background-color: #c1121f;
+.btn-primary {
+  background-color: var(--primary);
+  padding: .5em 1.5em;
+  border-radius: 5px;
+  color: var(--white);
+  display: inline-block;
+}
+
+.btn-call:hover  {
+  background-color: var(--secondary);
+}
+
+.btn-primary:hover  {
+  color: var(--secondary2);
 }
 /* =====================
     Navbar
@@ -94,7 +103,7 @@ header {
 }
 
 .navbar  a {
-  color: var(--white);
+  color: var(--cream);
   display: inline-block;
   padding: .75em 1.5em;
 }
@@ -109,11 +118,11 @@ header {
 .hero {
   display: flex;
   min-height: 90vh;
-  align-items: center;
-  justify-content: start;
+  align-items: flex-start;
+  justify-content: flex-end;
   background-color: var(--primary);
   gap: 1em;
-  overflow: hidden;
+  padding-top: 1em;
 }
 
 .hero > img {
@@ -121,15 +130,22 @@ header {
 }
 
 .hero-content {
-  min-width: 40vw;
-  font-size: 3.5rem;
-  line-height: 7rem;
+  min-width: 40vw; 
 }
 
 .hero-content > h1{
-  color: var(--cream);
+  color: var(--white);
+  font-size: 6rem;
+  line-height: 7rem;
+  word-break: break-word;
+  text-transform: uppercase;
 }
 
+.hero-content > .btn-call {
+  margin-top: 1em;
+  font-size: 2rem;
+  padding: .5em 3em;
+}
 
 /* ==================
   Cards 
@@ -170,14 +186,17 @@ header {
   justify-content: space-between;
   padding: 1em 2em;
 }
-.card-body > hr {
-  background-color: var(--cream);
-}
+
 .card-content > * {
   padding-bottom: 10px;
 }
 .card-content > h1 {
   font-size: 1.7rem;
+  border-bottom: 1px solid var(--cream);
+}
+
+.card-content > p {
+  padding-top: 1em;
 }
 
 .card-footer {
