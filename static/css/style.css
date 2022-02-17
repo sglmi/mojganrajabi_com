@@ -35,7 +35,6 @@ ul {
 
 a {
   text-decoration: none;
-  font-size: 1.2rem;
 }
 
 a:hover {
@@ -60,10 +59,7 @@ header {
   margin: auto;
 }
 
-.brand {
-  font-size: 2rem;
-  font-weight: bold;
-}
+
 
 .btn-call {
   background-color: var(--accent);
@@ -81,13 +77,33 @@ header {
   display: inline-block;
 }
 
+.btn-outline {
+  outline: none;
+  border: 1px solid var(--secondary2);
+  background-color: var(--primary);
+}
+
+.btn-outline:hover {
+  color: var(--secondary);
+}
+
 .btn-call:hover  {
-  background-color: var(--secondary);
+  opacity: .85;
 }
 
 .btn-primary:hover  {
   color: var(--secondary2);
 }
+
+.error {
+  color: var(--accent);
+}
+
+.help {
+  font-size: 1rem;
+  color: var(--secondary);
+}
+
 /* =====================
     Navbar
 ======================= */
@@ -105,11 +121,16 @@ header {
 .navbar  a {
   color: var(--cream);
   display: inline-block;
-  padding: .75em 1.5em;
+  padding: .5em 1.5em;
 }
 
 .navbar  a:hover {
   color: var(--secondary);
+}
+
+.navbar .brand {
+  font-size: 2rem;
+  font-weight: bold;
 }
 
 /* =====================
@@ -148,11 +169,11 @@ header {
 }
 
 /* ==================
-  Cards 
+  Cards (Courses page)
 ==================== */
 .cards-container {
   min-height: 90vh;
-  background-color: var(--secondary2);
+  background-color: var(--white);
 
 }
 .cards {
@@ -177,7 +198,6 @@ header {
 .card > video {
   min-width: 70%;
   height: auto;
-  /* border-right: .5em solid var(--secondary); */
 }
 
 .card-body {
@@ -207,6 +227,104 @@ header {
 }
 
 
+/* ===================
+         Login
+======================= */
+.login-container {
+  background-color: var(--white);
+  height: 90vh;
+
+}
+
+.login-form {
+  width: 50%;
+  margin: auto;
+  padding-top: 2em;
+}
+
+.login-form > input {
+  width: 100%;
+  padding: .75em 20px;
+  display: inline-block;
+  font-size: 1rem;
+}
+.login-form > input[type=text], .login-form > input[type=password] {
+  margin: .5em 0;
+  border: 1px solid var(--secondary2);
+}
+
+.login-form > input[type=text]:focus, .login-form > input[type=password]:focus {
+  outline: none;
+  border: 1px solid var(--secondary);
+  transition: .3s;
+}
+
+.login-form > input[type="submit"] {
+  background-color: var(--secondary);
+  color: var(--white);
+  margin: .5em 0;
+  border: none;
+  cursor: pointer;
+}
+.login-form > input[type="submit"] {
+  opacity: 0.95;
+}
+
+/* ===================
+  Sign up form
+======================= */
+.signup {
+  height: 90vh;
+}
+
+.signup-form {
+  width: 50%;
+  margin: auto;
+  padding-top: 2em;
+}
+
+.signup-form .field {
+  width: 100%;
+  padding-bottom: 1em; 
+
+}
+
+.signup-form  input {
+  width: 100%;
+  padding: .75em 20px;
+  display: inline-block;
+  font-size: 1rem;
+}
+.signup-form input[type=text], .signup-form input[type=password], .signup-form input[type=email] {
+  margin: .5em 0;
+  border: 1px solid var(--secondary2);
+}
+
+.signup-form input[type=text]:focus, .signup-form input[type=password]:focus, .signup-form input[type=email]:focus {
+  outline: none;
+  border: 1px solid var(--secondary);
+  transition: .3s;
+}
+
+.signup-form  input[type="submit"] {
+  background-color: var(--secondary);
+  color: var(--white);
+  margin: .5em 0;
+  border: none;
+  cursor: pointer;
+}
+.signup-form  input[type="submit"] {
+  opacity: 0.95;
+}
+
+.signup-form label {
+  font-weight: bold;
+}
+
+.signup-form li {
+  color: var(--secondary);
+  font-size: 1rem;
+}
 /* ===================
   Lesson
 ======================= */

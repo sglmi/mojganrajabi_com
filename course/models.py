@@ -1,7 +1,6 @@
-from email.policy import default
 from django.db import models
 from django.urls import reverse
-from django.utils import timezone
+from django.contrib.auth.models import User
 
 
 class Course(models.Model):
@@ -21,6 +20,7 @@ class Course(models.Model):
     payment_status = models.CharField(
         max_length=4, choices=PAYMENT_STATUS, default="paid"
     )
+    users = models.ManyToManyField(User)
 
     def get_absolute_url(self):
         return reverse("course-detail", kwargs={"pk": self.pk})
