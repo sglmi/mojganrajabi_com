@@ -12,14 +12,25 @@
     </div>
     <div class="chapters">
       <ul>
-        {% for chapter in lesson.chapter.course.chapter_set.all %}
+        {% for chapter in lesson.course.chapter_set.all %}
         <li class="chapter">
           <h3 class="accordion">{{ chapter.title }}</h3>
           <ul class="panel">
           {% for lesson in chapter.lesson_set.all %}
           <li class="lesson">
-            <a href="{% url 'lesson-detail' lesson.pk %}">{{ lesson.title }}</a>
-            <span>{{ lesson.payment_status}}</span>
+            {% if lesson.payment_status == "paid" and lesson.course not in user.course_set.all %}
+            <a href="{% url 'buy' lesson.course.pk %}">
+              <i class="fa-solid fa-play"></i>
+              {{ lesson.title }}
+              <i class="fa-solid fa-lock"></i>
+            </a>
+            {% else %}  <!-- if course is free -->
+            <a href="{% url 'lesson-detail' lesson.pk %}">
+              <i class="fa-solid fa-play"></i>
+              {{ lesson.title }}
+              <i class="fa-solid fa-lock-open"></i>
+            </a>
+            {% endif %}
           </li> <!-- end of a lesson-->
           {% endfor %}
           </ul> <!-- end of lessons-->

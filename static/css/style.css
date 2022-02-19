@@ -181,7 +181,7 @@ header {
 .cards {
   width: 80%;
   margin: auto;
-  padding: 5em 0;
+  padding-block: 3em;
 
 }
 
@@ -334,14 +334,11 @@ header {
   width: 80%;
   display: flex;
   flex-direction: column;
-  gap: 3em;
+  gap: 2em;
   margin: auto;
-  margin-bottom: 5em;
+  margin-block: 3em;
 }
 
-.lessons > .detail {
-  margin-top: 3em;
-}
 
 .lessons > .detail > p {
   margin-top: .5em;
@@ -403,7 +400,7 @@ header {
 /* ===================
   Lesson detail
 ======================= */
-.lesson{
+.lesson {
   padding: .5em 1em;
 
 }
