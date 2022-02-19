@@ -25,8 +25,15 @@ class Course(models.Model):
     def get_absolute_url(self):
         return reverse("course-detail", kwargs={"pk": self.pk})
 
+    def lessons(self):
+        return [
+            lesson
+            for chapter in self.chapter_set.all()
+            for lesson in chapter.lesson_set.all()
+        ]
+
     def number_of_lessons(self):
-        return sum(len(chapter.lesson_set.all()) for chapter in self.chapter_set.all())
+        return len(self.lessons())
 
     def __str__(self):
         return self.title
@@ -52,8 +59,15 @@ class Lesson(models.Model):
     )
     chapter = models.ForeignKey(Chapter, on_delete=models.CASCADE)
 
+    # list of users bought the course of the lesson.
+    def users(self):
+        pass
+
     def get_absolute_url(self):
         return reverse("lesson-detail", kwargs={"pk": self.pk})
+
+    def course(self):
+        return self.chapter.course
 
     def __str__(self):
         return self.title

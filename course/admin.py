@@ -14,7 +14,13 @@ class LessonInline(admin.TabularInline):
 
 
 class CourseAdmin(admin.ModelAdmin):
-    list_display = ("title", "subtitle", "date_published", "chapters", "lessons")
+    list_display = (
+        "title",
+        "subtitle",
+        "date_published",
+        "lessons",
+        "payment_status",
+    )
     inlines = [
         ChapterInline,
     ]

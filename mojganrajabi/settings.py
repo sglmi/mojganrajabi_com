@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     # project apps
     "course.apps.CourseConfig",
     "users.apps.UsersConfig",
+    "payment.apps.PaymentConfig",
 ]
 
 MIDDLEWARE = [

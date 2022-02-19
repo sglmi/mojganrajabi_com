@@ -15,6 +15,8 @@
   --white: #f8f9fa;
   --black: #212529;
   --cream: #eae2b7;
+  --gray: #e9ecef;
+  --cyan: #00afb9;
   font-family: 'Poppins', sans-serif;
 }
 
@@ -368,18 +370,23 @@ header {
   
 }
 
+.chapters {
+  background: var(--gray);
+  color: var(--white);
+  border: 1px solid var(--cream);
+}
+
 .accordion {
-  background-color: var(--cream);
-  color: #444;
-  cursor: pointer;
   padding: 1em;
+  color: var(--black);
+  cursor: pointer;
   width: 100%;
   border: none;
   text-align: left;
   outline: none;
   font-size: .95rem;
   transition: 0.4s;
-  margin-bottom: 5px;
+  border-bottom: 1px solid var(--cream);
 }
 
 .active, .accordion:hover {
@@ -387,7 +394,6 @@ header {
 }
 
 .panel {
-  padding: 0 18px;
   display: none;
   background-color: var(--white);
   overflow: hidden;
@@ -395,5 +401,48 @@ header {
 
 
 /* ===================
-  lesson detail
+  Lesson detail
 ======================= */
+.lesson{
+  padding: .5em 1em;
+
+}
+
+.lesson > a {
+  color: var(--cyan);
+}
+
+
+/* ===================
+  Buy page
+======================= */
+.buy {
+  width:50%;
+  margin: auto;
+  margin-top: 2em;
+  color: var(--black);
+}
+
+.how {
+  line-height: 2;
+}
+.buy .price {
+  color: var(--secondary);
+  margin-left: .5em;
+  margin-top: .25em;
+}
+
+.buy hr {
+  background: var(--cream);
+  margin-block: 1em;
+}
+
+.thanks {
+  margin-top: 4em;
+  padding: 1em;
+  background-color: var(--cream);
+}
+
+.thanks > p {
+  color: var(--primary);
+}

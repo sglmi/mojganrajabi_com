@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block title %}Buy this course{% endblock title %}
+{% block content %}
+<div class="buy">
+  <h3>{{ course.title }}</h3> 
+  <h3 class="price">${{ course.price }}</h3> 
+  <hr>
+  <div class="how">
+    <h3>How to unlock this course?</h3>
+    <ol>
+      <li>Pay the course price to <em>{{ bank_account }}</em></li>
+      <li>Email me at <em>{{ email }}</em> including <em>bank recipt</em>, your <em>username</em> and <em>course name</em>.</li>
+    </ol>
+    <p>After check the recipt I will give you access to the course.</p>
+  </div>
+  <div class="thanks">
+    <p>Thank you for considering buying this course.</p>
+    <p>I promise to implement online payment solution very soon.</p>
+    <p> - Regards <strong>Mojgan Rajabi</strong></p>
+  </div>
+</div>
+{% endblock content %}
