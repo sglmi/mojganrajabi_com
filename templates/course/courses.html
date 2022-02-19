@@ -13,10 +13,8 @@
         <h1>{{ course.title }}</h1>
         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. At, laboriosam!</p>
         
-        {% if course.payment_status == 'paid' and not user.is_authenticated %}
-        <a class="btn-call" href="{% url 'login' %}"><i class="fa-solid fa-lock"></i>Unlock course</a>
-        {% elif course.payment_status == 'paid' %}
-        <a class="btn-call" href="{% url 'course-detail' course.pk %}"><i class="fa-solid fa-lock"></i>Unlock course</a>
+        {% if course.payment_status == 'paid' %}
+        <a class="btn-call" href="{% url 'course-detail' course.pk %}"><i class="fa-solid fa-lock"></i>Go to course</a>
         {% endif %}
 
         {% if course.payment_status == 'free'  %}

@@ -23,7 +23,7 @@ class CourseListView(ListView):
     context_object_name = "courses"
 
 
-class CourseDetailView(LoginRequiredMixin, CourseAccessMixin, DetailView):
+class CourseDetailView(LoginRequiredMixin, DetailView):
     model = Course
     template_name = "course/course_detail.html"
     context_object_name = "course"

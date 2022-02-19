@@ -1,28 +1,37 @@
 {% extends 'base.html' %}
 {% block title %} Mojgan Rajabi | {{course.title}} {% endblock title %}
 {% block content %}
-<h1>{{ course.title }}</h1>
-<h2>{{ course.subtitle }}</h2>
-<p>{{ course.detail }}</p>
-<hr>
-<div class="videoplayer">
-  <video width="320" height="240" controls>
-    <source src="{{ course.promotion.url }}" type="video/mp4">
-  </video>
-</div>
-<ul class="chapters">
-  {% for chapter in course.chapter_set.all %}
+<!-- Lessons conteainer -->
+<div class="lessons">
+  <div class="detail">
+    <h1>{{ course.title }}</h1>
+    <h2>{{ course.subtitle }}</h2>
+    <p>{{ course.detail }}</p>
+  </div>
+
+<!-- Content of a lessons / player + chapters -->
+<div class="content">
+  <div class="player">
+    <video controls>
+      <source src="{{ course.promotion.url }}" type="video/mp4">
+    </video>
+  </div>
+  <div class="chapters">
+    <ul>
+    {% for chapter in course.chapter_set.all %}
     <li class="chapter">
       <h3>{{ chapter.title }}</h3>
       <ul class="lesssons">
-        {% for lesson in chapter.lesson_set.all %}
-          <li class="lesson">
-            <a href="{% url 'lesson-detail' lesson.pk %}">{{ lesson.title }}</a>
-          </li>
-        {% endfor %}
+      {% for lesson in chapter.lesson_set.all %}
+        <li class="lesson">
+          <a href="{% url 'lesson-detail' lesson.pk %}">{{ lesson.title }}</a>
+        </li>
+      {% endfor %}
       </ul> <!-- end of a lesson videos. -->
     </li> <!-- end of a chapter-->
-  {% endfor %}
-</ul>  <!-- end of chapters. -->
-
+    {% endfor %}
+  </ul>
+  </div>  <!-- end of chapters. -->
+</div> <!-- endof player and chapters -->
+</div> <!-- end of .lessons-->
 {% endblock content %}

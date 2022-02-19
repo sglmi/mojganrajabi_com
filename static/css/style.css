@@ -328,14 +328,43 @@ header {
 /* ===================
   Lesson
 ======================= */
-.lesson-flex {
+.lessons {
   width: 80%;
   display: flex;
-  gap: 5em;
+  flex-direction: column;
+  gap: 3em;
   margin: auto;
+  margin-bottom: 5em;
+}
+
+.lessons > .detail {
+  margin-top: 3em;
+}
+
+.lessons > .detail > p {
+  margin-top: .5em;
+  line-height: 1.5;
+}
+
+.lessons > .content {
+  display: flex;
+  gap: 5em;
+  justify-content: flex-start;
+}
+
+.content > .player {
+  width: 70%;
+  height: auto;
 }
 
 .player > video {
-  width: 780px;
-  height: 450px;
+  width: 100%;
+  height: auto;
+
 }
+
+.content > .chapters {
+  width: 30%;
+  
+}
+
