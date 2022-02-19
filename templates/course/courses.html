@@ -14,11 +14,11 @@
         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. At, laboriosam!</p>
         
         {% if course.payment_status == 'paid' %}
-        <a class="btn-call" href="{% url 'course-detail' course.pk %}"><i class="fa-solid fa-lock"></i>Go to course</a>
+        <a class="btn-call" href="{% url 'course-detail' course.pk %}">Go to course</a>
         {% endif %}
 
         {% if course.payment_status == 'free'  %}
-        <a class="btn-primary" href="{% url 'course-detail' course.pk %}"><i class="fa-solid fa-lock-open"></i></i>Go to course</a>
+        <a class="btn-primary" href="{% url 'course-detail' course.pk %}">Go to course</a>
         {% endif %}
       </div>
       <div class="card-footer">

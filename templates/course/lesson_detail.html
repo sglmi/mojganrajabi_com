@@ -1,26 +1,47 @@
 {% extends 'base.html' %}
-
+{% block title %}{{lesson.title}}{% endblock title %}
 {% block content %}
-<div class="lesson-flex">
-  <div class="player">
-    <video width="320" height="240" controls>
-      <source src="{{ lesson.video.url }}" type="video/mp4">
-    </video>
-  </div>
-  <ul class="chapters">
-    {% for chapter in lesson.chapter.course.chapter_set.all %}
-    <li class="chapter">
-      <h3>{{ chapter.title }}</h3>
-      <ul class="lessons">
-      {% for lesson in chapter.lesson_set.all %}
-      <li class="lesson">
-        <a href="{% url 'lesson-detail' lesson.pk %}">{{ lesson.title }}</a>
-        <span>{{ lesson.payment_status}}</span>
-      </li> <!-- end of a lesson-->
-      {% endfor %}
-      </ul> <!-- end of lessons-->
-    </li> <!-- end of a chapter-->
-    {% endfor %} 
-  </ul> <!-- end of chapters-->
+<!-- Lessons conteainer -->
+<div class="lessons">
+  <!-- Content of a lessons / player + chapters -->
+  <div class="content">
+    <div class="player">
+      <video controls>
+        <source src="{{ lesson.video.url }}" type="video/mp4">
+      </video>
+    </div>
+    <div class="chapters">
+      <ul>
+        {% for chapter in lesson.chapter.course.chapter_set.all %}
+        <li class="chapter">
+          <h3 class="accordion">{{ chapter.title }}</h3>
+          <ul class="panel">
+          {% for lesson in chapter.lesson_set.all %}
+          <li class="lesson">
+            <a href="{% url 'lesson-detail' lesson.pk %}">{{ lesson.title }}</a>
+            <span>{{ lesson.payment_status}}</span>
+          </li> <!-- end of a lesson-->
+          {% endfor %}
+          </ul> <!-- end of lessons-->
+        </li> <!-- end of a chapter-->
+        {% endfor %} 
+      </ul> 
+  </div>  <!-- end of chapters. -->
 </div>
+<script>
+  var acc = document.getElementsByClassName("accordion");
+  var i;
+  
+  for (i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function() {
+      this.classList.toggle("active");
+      var panel = this.nextElementSibling;
+      if (panel.style.display === "block") {
+        panel.style.display = "none";
+      } else {
+        panel.style.display = "block";
+      }
+    }); // end of function.
+  } // end for
+  </script>
 {% endblock content %}

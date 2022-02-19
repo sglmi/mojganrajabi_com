@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% block title %} Mojgan Rajabi | {{course.title}} {% endblock title %}
+{% block title %}{{ course.title }}{% endblock title %}
 {% block content %}
 <!-- Lessons conteainer -->
 <div class="lessons">
@@ -19,11 +19,11 @@
   <div class="chapters">
     <ul>
     {% for chapter in course.chapter_set.all %}
-    <li class="chapter">
-      <h3>{{ chapter.title }}</h3>
-      <ul class="lesssons">
+    <li>
+      <h3 class="accordion">{{ chapter.title }}</h3>
+      <ul class="panel">
       {% for lesson in chapter.lesson_set.all %}
-        <li class="lesson">
+        <li>
           <a href="{% url 'lesson-detail' lesson.pk %}">{{ lesson.title }}</a>
         </li>
       {% endfor %}
@@ -34,4 +34,21 @@
   </div>  <!-- end of chapters. -->
 </div> <!-- endof player and chapters -->
 </div> <!-- end of .lessons-->
+
+<script>
+  var acc = document.getElementsByClassName("accordion");
+  var i;
+  
+  for (i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function() {
+      this.classList.toggle("active");
+      var panel = this.nextElementSibling;
+      if (panel.style.display === "block") {
+        panel.style.display = "none";
+      } else {
+        panel.style.display = "block";
+      }
+    }); // end of function.
+  } // end for
+  </script>
 {% endblock content %}

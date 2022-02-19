@@ -326,7 +326,7 @@ header {
   font-size: 1rem;
 }
 /* ===================
-  Lesson
+  Course detail
 ======================= */
 .lessons {
   width: 80%;
@@ -368,3 +368,32 @@ header {
   
 }
 
+.accordion {
+  background-color: var(--cream);
+  color: #444;
+  cursor: pointer;
+  padding: 1em;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: .95rem;
+  transition: 0.4s;
+  margin-bottom: 5px;
+}
+
+.active, .accordion:hover {
+  background-color: var(--secondary2); 
+}
+
+.panel {
+  padding: 0 18px;
+  display: none;
+  background-color: var(--white);
+  overflow: hidden;
+}
+
+
+/* ===================
+  lesson detail
+======================= */
