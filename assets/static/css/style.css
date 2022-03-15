@@ -1,0 +1,445 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;1,700&display=swap');
+
+
+* {
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary: #003049;
+  --secondary: #f77f00;
+  --secondary2: #fcbf49;
+  --accent: #d62828;
+  --white: #f8f9fa;
+  --black: #212529;
+  --cream: #eae2b7;
+  --gray: #e9ecef;
+  --cyan: #00afb9;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: var(--white);
+  color: var(--black);
+}
+
+h1, p, span {
+  color: var(--black);
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  transition: .5s;
+}
+
+hr {
+  height: 1px;
+  background-color: var(--black);
+}
+
+i {
+  margin-right: 5px;
+}
+
+header {
+  background-color: var(--primary);
+}
+
+.container {
+  width: 80%;
+  margin: auto;
+}
+
+
+
+.btn-call {
+  background-color: var(--accent);
+  padding: .5em 1.5em;
+  border-radius: 5px;
+  color: var(--white);
+  display: inline-block;
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  padding: .5em 1.5em;
+  border-radius: 5px;
+  color: var(--white);
+  display: inline-block;
+}
+
+.btn-outline {
+  outline: none;
+  border: 1px solid var(--secondary2);
+  background-color: var(--primary);
+}
+
+.btn-outline:hover {
+  color: var(--secondary);
+}
+
+.btn-call:hover  {
+  opacity: .85;
+}
+
+.btn-primary:hover  {
+  color: var(--secondary2);
+}
+
+.error {
+  color: var(--accent);
+}
+
+.help {
+  font-size: 1rem;
+  color: var(--secondary);
+}
+
+/* =====================
+    Navbar
+======================= */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 10vh;
+  background-color: var(--primary);
+  width: 80%;
+  margin: auto;
+  /* border-bottom: 1px solid var(--secondary); */
+}
+
+.navbar  a {
+  color: var(--cream);
+  display: inline-block;
+  padding: .5em 1.5em;
+}
+
+.navbar  a:hover {
+  color: var(--secondary);
+}
+
+.navbar .brand {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+/* =====================
+    Hero
+======================= */
+.hero {
+  display: flex;
+  min-height: 90vh;
+  align-items: flex-start;
+  justify-content: flex-end;
+  background-color: var(--primary);
+  gap: 1em;
+  padding-top: 1em;
+}
+
+.hero > img {
+  min-width: 40vw;
+}
+
+.hero-content {
+  min-width: 40vw; 
+}
+
+.hero-content > h1{
+  color: var(--white);
+  font-size: 6rem;
+  line-height: 7rem;
+  word-break: break-word;
+  text-transform: uppercase;
+}
+
+.hero-content > .btn-call {
+  margin-top: 1em;
+  font-size: 2rem;
+  padding: .5em 3em;
+}
+
+/* ==================
+  Cards (Courses page)
+==================== */
+.cards-container {
+  min-height: 90vh;
+  background-color: var(--white);
+
+}
+.cards {
+  width: 80%;
+  margin: auto;
+  padding-block: 3em;
+
+}
+
+.card {
+  margin-bottom: 5em;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  display: flex;
+  background-color: var(--white);
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.card > video {
+  min-width: 70%;
+  height: auto;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1em 2em;
+}
+
+.card-content > * {
+  padding-bottom: 10px;
+}
+.card-content > h1 {
+  font-size: 1.7rem;
+  border-bottom: 1px solid var(--cream);
+}
+
+.card-content > p {
+  padding-top: 1em;
+}
+
+.card-footer {
+  border-top: 1px solid var(--cream);
+  padding-top: 1em;
+  display: flex;
+  justify-content: space-between;
+}
+
+
+/* ===================
+         Login
+======================= */
+.login-container {
+  background-color: var(--white);
+  height: 90vh;
+
+}
+
+.login-form {
+  width: 50%;
+  margin: auto;
+  padding-top: 2em;
+}
+
+.login-form > input {
+  width: 100%;
+  padding: .75em 20px;
+  display: inline-block;
+  font-size: 1rem;
+}
+.login-form > input[type=text], .login-form > input[type=password] {
+  margin: .5em 0;
+  border: 1px solid var(--secondary2);
+}
+
+.login-form > input[type=text]:focus, .login-form > input[type=password]:focus {
+  outline: none;
+  border: 1px solid var(--secondary);
+  transition: .3s;
+}
+
+.login-form > input[type="submit"] {
+  background-color: var(--secondary);
+  color: var(--white);
+  margin: .5em 0;
+  border: none;
+  cursor: pointer;
+}
+.login-form > input[type="submit"] {
+  opacity: 0.95;
+}
+
+/* ===================
+  Sign up form
+======================= */
+.signup {
+  height: 90vh;
+}
+
+.signup-form {
+  width: 50%;
+  margin: auto;
+  padding-top: 2em;
+}
+
+.signup-form .field {
+  width: 100%;
+  padding-bottom: 1em; 
+
+}
+
+.signup-form  input {
+  width: 100%;
+  padding: .75em 20px;
+  display: inline-block;
+  font-size: 1rem;
+}
+.signup-form input[type=text], .signup-form input[type=password], .signup-form input[type=email] {
+  margin: .5em 0;
+  border: 1px solid var(--secondary2);
+}
+
+.signup-form input[type=text]:focus, .signup-form input[type=password]:focus, .signup-form input[type=email]:focus {
+  outline: none;
+  border: 1px solid var(--secondary);
+  transition: .3s;
+}
+
+.signup-form  input[type="submit"] {
+  background-color: var(--secondary);
+  color: var(--white);
+  margin: .5em 0;
+  border: none;
+  cursor: pointer;
+}
+.signup-form  input[type="submit"] {
+  opacity: 0.95;
+}
+
+.signup-form label {
+  font-weight: bold;
+}
+
+.signup-form li {
+  color: var(--secondary);
+  font-size: 1rem;
+}
+/* ===================
+  Course detail
+======================= */
+.lessons {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  margin: auto;
+  margin-block: 3em;
+}
+
+
+.lessons > .detail > p {
+  margin-top: .5em;
+  line-height: 1.5;
+}
+
+.lessons > .content {
+  display: flex;
+  gap: 5em;
+  justify-content: flex-start;
+}
+
+.content > .player {
+  width: 70%;
+  height: auto;
+}
+
+.player > video {
+  width: 100%;
+  height: auto;
+
+}
+
+.content > .chapters {
+  width: 30%;
+  
+}
+
+.chapters {
+  background: var(--gray);
+  color: var(--white);
+  border: 1px solid var(--cream);
+}
+
+.accordion {
+  padding: 1em;
+  color: var(--black);
+  cursor: pointer;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: .95rem;
+  transition: 0.4s;
+  border-bottom: 1px solid var(--cream);
+}
+
+.active, .accordion:hover {
+  background-color: var(--secondary2); 
+}
+
+.panel {
+  display: none;
+  background-color: var(--white);
+  overflow: hidden;
+}
+
+
+/* ===================
+  Lesson detail
+======================= */
+.lesson {
+  padding: .5em 1em;
+
+}
+
+.lesson > a {
+  color: var(--cyan);
+}
+
+
+/* ===================
+  Buy page
+======================= */
+.buy {
+  width:50%;
+  margin: auto;
+  margin-top: 2em;
+  color: var(--black);
+}
+
+.how {
+  line-height: 2;
+}
+.buy .price {
+  color: var(--secondary);
+  margin-left: .5em;
+  margin-top: .25em;
+}
+
+.buy hr {
+  background: var(--cream);
+  margin-block: 1em;
+}
+
+.thanks {
+  margin-top: 4em;
+  padding: 1em;
+  background-color: var(--cream);
+}
+
+.thanks > p {
+  color: var(--primary);
+}
