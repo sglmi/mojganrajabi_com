@@ -20,7 +20,8 @@ class Course(models.Model):
     payment_status = models.CharField(
         max_length=4, choices=PAYMENT_STATUS, default="paid"
     )
-    users = models.ManyToManyField(User)
+    # users = models.ManyToManyField(User)
+    link = models.CharField(max_length=255, default="somelink.com/course")
 
     def get_absolute_url(self):
         return reverse("course-detail", kwargs={"pk": self.pk})

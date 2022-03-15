@@ -139,13 +139,11 @@ header {
     Hero
 ======================= */
 .hero {
-  display: flex;
-  min-height: 90vh;
-  align-items: flex-start;
-  justify-content: flex-end;
   background-color: var(--primary);
-  gap: 1em;
-  padding-top: 1em;
+  padding-block: 1em;
+  width: 100vw;
+  height: 100vh;
+
 }
 
 .hero > img {
@@ -153,7 +151,8 @@ header {
 }
 
 .hero-content {
-  min-width: 40vw; 
+  width: 80%;
+  margin: auto;
 }
 
 .hero-content > h1{

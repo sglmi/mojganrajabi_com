@@ -11,14 +11,15 @@
     <div class="card-body">
       <div class="card-content">
         <h1>{{ course.title }}</h1>
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. At, laboriosam!</p>
+        <p>{{ course.subtitle }}</p>
         
         {% if course.payment_status == 'paid' %}
-        <a class="btn-call" href="{% url 'course-detail' course.pk %}"><i class="fa-solid fa-dollar-sign"></i>Go to course</a>
+        <a class="btn-call" href={{ course.link }}><i class="fa-solid fa-dollar-sign"></i>Go to course</a>
+        {% comment %} <a class="btn-call" href="{% url 'course-detail' course.pk %}"><i class="fa-solid fa-dollar-sign"></i>Go to course</a> {% endcomment %}
         {% endif %}
 
         {% if course.payment_status == 'free'  %}
-        <a class="btn-primary" href="{% url 'course-detail' course.pk %}"><i class="fa-solid fa-lock-open"></i>Go to course</a>
+        <a class="btn-primary" href={{ course.link }}><i class="fa-solid fa-lock-open"></i>Go to course</a>
         {% endif %}
       </div>
       <div class="card-footer">
