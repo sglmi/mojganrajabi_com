@@ -5,13 +5,13 @@
 
 
 <div class="px-4 py-5 my-5 text-center">
-  <img class="d-block mx-auto mb-4" src="{% static 'images/m.png' %}" alt="" width="72">
+  <img class="d-block mx-auto mb-4" src="{% static 'images/m.png' %}" alt="logo" width="72">
   <h1 class="display-5 fw-bold">Learn  modern computation.</h1>
   <div class="col-lg-6 mx-auto">
     <p class="lead mb-4">With 10+ years of experience I will teach you modern way of data analysis which help to get job in the industry.</p>
     <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-      <button type="button" class="btn btn-primary btn-lg px-4 gap-3">Courses</button>
-      <button type="button" class="btn btn-outline-secondary btn-lg px-4">Blog Posts</button>
+      <a href="{% url 'course-list' %}" class="btn btn-primary btn-lg px-4 gap-3">Courses</a>
+      <a href="{% url 'blog_home' %}" class="btn btn-outline-secondary btn-lg px-4">Blog Posts</a>
     </div>
   </div>
 </div>
