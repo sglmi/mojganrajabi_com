@@ -1,35 +1,32 @@
 {% extends 'base.html' %}
 {% block title %}All courses{% endblock title %}
 {% block content %}
-<div class="cards-container">
-<ul class="cards">
-  {% for course in courses %}
-  <li class="card">
-    <video controls>
-      <source src="{{ course.promotion.url }}" type="video/mp4">
-    </video>
-    <div class="card-body">
-      <div class="card-content">
-        <h1>{{ course.title }}</h1>
-        <p>{{ course.subtitle }}</p>
-        
-        {% if course.payment_status == 'paid' %}
-        <a class="btn-call" href={{ course.link }}><i class="fa-solid fa-dollar-sign"></i>Go to course</a>
-        {% comment %} <a class="btn-call" href="{% url 'course-detail' course.pk %}"><i class="fa-solid fa-dollar-sign"></i>Go to course</a> {% endcomment %}
-        {% endif %}
 
-        {% if course.payment_status == 'free'  %}
-        <a class="btn-primary" href={{ course.link }}><i class="fa-solid fa-lock-open"></i>Go to course</a>
-        {% endif %}
-      </div>
-      <div class="card-footer">
-        <p><i class="fa-solid fa-video"></i>{{ course.number_of_lessons }}</p>
-        <p><i class="fa-solid fa-calendar-days"></i>{{ course.date_published }}<p>
-        <p><i class="fa-solid fa-dollar-sign"></i>{{ course.price }}</p>
-      </div>
-    </div>
-  </li>
+<div class="container mt-5">
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+  {% for course in courses %}
+    <div class="col">
+      <div class="card">
+        <video controls>
+          <source src="{{ course.promotion.url }}" type="video/mp4">
+        </video>
+        <div class="card-body">
+          <h5 class="card-title">{{ course.title }}</h5>
+          <p class="card-text">{{ course.subtitle }}</p>
+          <a href="{% url  'course-detail' course.pk %}" class="btn btn-primary">Course detail</a>
+        </div> <!-- end of card body -->
+        <div class="card-footer">
+          <span class="px-3"><i class="fa-solid fa-video"></i><small class="m-1">{{ course.number_of_lessons }}</small></span>
+          <span><i class="fa-solid fa-calendar-days"></i><small class="m-1">{{ course.date_published }}</small></span>
+          <span><i class="fa-solid fa-dollar-sign"></i><small class="m-1">{{ course.price }}</small></sapn>
+        </div> <!-- card footer -->
+      </div> <!-- end of a card -->
+    </div> <!-- end of col -->
   {% endfor %}
-</ul>
+  </div> <!-- end of grid system -->
 </div>
 {% endblock content %}
+
+
+
+
