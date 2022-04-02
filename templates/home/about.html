@@ -2,9 +2,12 @@
 {% block title %}About Me{% endblock title %}
 {% block content %}
 <div class="container mt-5 px-5">
-    {% for about  in object_list  %} 
-        <h1>{{ about.title }}</h1>
-        <p>{{ about.content }}</p>
-    {% endfor %}
+  {% for about  in object_list  %} 
+    <div class="py-3">
+      <h3>{{ about.title }}</h3>
+      <p>{{ about.content }}</p>
+      <hr>
+    </div>
+  {% endfor %}
 </div>
 {% endblock content %}

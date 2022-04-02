@@ -52,4 +52,3 @@ class LessonAdmin(admin.ModelAdmin):
 
 admin.site.register(Course, CourseAdmin)
 admin.site.register(Chapter, ChapterAdmin)
-admin.site.register(Lesson, LessonAdmin)
