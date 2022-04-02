@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block title %}About Me{% endblock title %}
+{% block content %}
+<div class="container mt-5 px-5">
+    {% for about  in object_list  %} 
+        <h1>{{ about.title }}</h1>
+        <p>{{ about.content }}</p>
+    {% endfor %}
+</div>
+{% endblock content %}
