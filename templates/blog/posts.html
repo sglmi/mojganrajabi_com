@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block title %}Blog posts{% endblock title %}
+{% block content %}
+{% for post in post_list %}
+<div>
+  <div>
+    <h2>{{ post.title }}</h2>
+    <p>{{ post.author }} | {{ post.created_on}} </p>
+    <post>{{post.content|slice:":200" }}</p>
+    <a href="{% url 'post_detail' post.slug  %}">Read More &rarr;</a>
+  </div>
+</div>
+{% endfor %}
+{% endblock content %}
